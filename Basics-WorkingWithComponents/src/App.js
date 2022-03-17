@@ -1,13 +1,14 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Expenses from "./components/Expenses/Expenses.js";
+import NewExpense from "./components/NewExpense/NewExpense.js";
 const App = () => {
   const expenses = [
     {
       id: "e1",
       title: "Toilet Paper",
       amount: "$94.12",
-      date: new Date(2021, 7, 14),
+      date: new Date(2020, 7, 14),
     },
     {
       id: "e2",
@@ -25,7 +26,7 @@ const App = () => {
       id: "e4",
       title: "New Desk (Wooden)",
       amount: "$450",
-      date: new Date(2021, 5, 19),
+      date: new Date(2019, 5, 19),
     },
     {
       id: "e5",
@@ -34,8 +35,15 @@ const App = () => {
       date: new Date(2021, 4, 12),
     },
   ];
+
+  const addExpenseHandler = (expense) => {
+    console.log("In App.js");
+    console.log(expense);
+  };
+
   return (
     <div>
+      <NewExpense onAddExpense={addExpenseHandler}></NewExpense>
       <Expenses items={expenses}></Expenses>
     </div>
   );
