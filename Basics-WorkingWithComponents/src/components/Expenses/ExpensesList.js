@@ -1,4 +1,5 @@
 import React from "react";
+
 import ExpenseItem from "./ExpenseItem";
 import "./ExpensesList.css";
 
@@ -13,8 +14,8 @@ const ExpensesList = (props) => {
         <ExpenseItem
           key={expense.id}
           title={expense.title}
-          date={expense.date}
           amount={expense.amount}
+          date={expense.date}
         />
       ))}
     </ul>
